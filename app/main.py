@@ -14,13 +14,6 @@ templates = Jinja2Templates(directory="app/templates")
 async def index(request: Request):
     return templates.TemplateResponse("pages/index.html", {"request": request})
 
-@app.get("/clientes", response_class=HTMLResponse)
-async def mantenimiento_clientes(request: Request):
-    return templates.TemplateResponse(
-        "pages/mantenimiento.html",
-        {"request": request}
-    )
-
 # --- VER CLIENTES ---
 @app.get("/clientes", response_class=HTMLResponse)
 async def ver_clientes(request: Request):
